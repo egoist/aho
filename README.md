@@ -33,6 +33,8 @@ aho user/repo [destination]
 
 Generate a project from `<repo>` to `[destination]`, destination defaults to current directory.
 
+`<repo>` is in the format of `user/repo#branch_or_tag`, currently only GitHub repositories are supported. `#branch_or_tag` is optional.
+
 ### `--force`
 
 By default the command would abort if destination is not empty, use `--force` if you want to empty the dir before writing to it.
