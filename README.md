@@ -4,7 +4,7 @@
 
 # aho
 
-[![npm version](https://badgen.net/npm/v/aho)](https://npm.im/aho)
+[![npm version](https://badgen.net/npm/v/aho)](https://npm.im/aho) [![npm downloads](https://badgen.net/npm/dm/aho)](https://npm/im/aho) [![install size](https://packagephobia.com/badge?p=aho)](https://packagephobia.com/result?p=aho)
 
 > ultra simple project scaffolding
 
