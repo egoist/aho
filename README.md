@@ -11,7 +11,10 @@
 With Node.js:
 
 ```bash
+# NPM
 npx aho user/repo [destination]
+# PNPM
+pnpm dlx aho user/repo [destination]
 ```
 
 With Deno:
