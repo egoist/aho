@@ -61,7 +61,6 @@ export const args = ['deno', 'cli', ...Deno.args]
 export const exit = Deno.exit
 
 export const getOwnVersion = () => {
-  const pkgPath = new URL('../../package.json', import.meta.url)
-  const content = Deno.readTextFileSync(pkgPath)
-  return JSON.parse(content).version
+  const [, version] = /\@([a-z0-9\.]+)/.exec(import.meta.url) || []
+  return version || 'unknown'
 }
