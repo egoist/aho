@@ -41,6 +41,10 @@ By default the command would abort if destination is not empty, use `--force` if
 
 Extract a sub directory from `<repo>` to `[destination]`.
 
+## Sponsors
+
+[![sponsors](https://sponsors-images.egoist.sh/sponsors.svg)](https://github.com/sponsors/egoist)
+
 ## License
 
 MIT &copy; [EGOIST](https://github.com/sponsors/egoist)
