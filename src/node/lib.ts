@@ -1,6 +1,6 @@
 import { spawn } from 'child_process'
 import { tmpdir } from 'os'
-import { resolve } from 'path'
+import { resolve, join } from 'path'
 import https from 'https'
 import fs from 'fs'
 import { version } from '../../package.json'
@@ -50,11 +50,12 @@ export const downloadFile = (url: string, outFile: string) =>
       .on('error', reject)
   })
 
-export const ensureDir = (dir: string) => fs.mkdirSync(dir, { recursive: true })
+export const ensureDirSync = (dir: string) =>
+  fs.mkdirSync(dir, { recursive: true })
 
 export const existsSync = fs.existsSync
 
-export const isEmptyDir = (dir: string) => fs.readdirSync(dir).length === 0
+export const isEmptyDirSync = (dir: string) => fs.readdirSync(dir).length === 0
 
 export const getTempDir = () => tmpdir()
 
@@ -82,10 +83,21 @@ export function runCommand(cmd: string[]) {
 
 export const resolvePath = resolve
 
+export const joinPath = join
+
 export const args = process.argv
 
 export const exit = process.exit
 
 export const getOwnVersion = () => {
   return version
+}
+
+export const moveSync = (from: string, to: string) => {
+  fs.renameSync(from, to)
+}
+
+export const emptyDirSync = (path: string) => {
+  fs.rmSync(path, { recursive: true, force: true })
+  ensureDirSync(path)
 }

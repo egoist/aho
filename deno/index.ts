@@ -1,16 +1,19 @@
 import {
   cac,
   downloadFile,
-  ensureDir,
+  ensureDirSync,
   existsSync,
   getTempDir,
-  isEmptyDir,
+  isEmptyDirSync,
   resolvePath,
   runCommand,
   fetchJSON,
   args,
   exit,
   getOwnVersion,
+  moveSync,
+  emptyDirSync,
+  joinPath,
 } from './deno/lib.ts'
 
 export const start = async () => {
@@ -22,6 +25,7 @@ export const start = async () => {
       '-f, --force',
       `Force override desitination directory even if it's not empty`,
     )
+    .option('-p, --path <path>', `Only extract a sub path within the repo`)
     .action(async (_repo, desitination, flags) => {
       if (!_repo) {
         throw new PrettyError('No repo provided')
@@ -34,7 +38,7 @@ export const start = async () => {
       if (
         !flags.force &&
         existsSync(desitination) &&
-        !isEmptyDir(desitination)
+        !isEmptyDirSync(desitination)
       ) {
         throw new PrettyError(
           `Destination directory is not empty, use --force if you are sure about this`,
@@ -51,7 +55,7 @@ export const start = async () => {
         tempTarFile,
       )
       console.log(`Generating to ${desitination}`)
-      await extract(tempTarFile, desitination)
+      await extract(tempTarFile, desitination, { path: flags.path })
     })
 
   cli.version(getOwnVersion())
@@ -82,9 +86,13 @@ class PrettyError extends Error {
   }
 }
 
-async function extract(from: string, to: string) {
-  ensureDir(to)
-  await runCommand(['tar', 'xvzf', from, '-C', to, '--strip-components', '1'])
+async function extract(from: string, to: string, { path }: { path?: string }) {
+  const tempDir = getTempDir() + `/aho_temp_${Date.now()}`
+  ensureDirSync(tempDir)
+  const cmd = ['tar', 'xvzf', from, '-C', tempDir, '--strip-components', '1']
+  await runCommand(cmd)
+  emptyDirSync(to)
+  moveSync(path ? joinPath(tempDir, path) : tempDir, to)
 }
 
 function parseRepo(input: string) {

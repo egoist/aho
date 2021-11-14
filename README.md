@@ -37,6 +37,10 @@ Generate a project from `<repo>` to `[destination]`, destination defaults to cur
 
 By default the command would abort if destination is not empty, use `--force` if you want to overwrite it.
 
+### `-p, --path <path>`
+
+Extract a sub directory from `<repo>` to `[destination]`.
+
 ## License
 
 MIT &copy; [EGOIST](https://github.com/sponsors/egoist)

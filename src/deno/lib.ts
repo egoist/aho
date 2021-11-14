@@ -1,12 +1,19 @@
 import {
-  fromFileUrl,
   resolve as resolvePath,
   join as joinPath,
 } from 'https://deno.land/std@0.114.0/path/mod.ts'
 import { writableStreamFromWriter } from 'https://deno.land/std@0.114.0/streams/mod.ts'
 import { USER_AGENT } from '../shared.ts'
+import { moveSync as _moveSync } from 'https://deno.land/std@0.114.0/fs/move.ts'
+import { emptyDirSync } from 'https://deno.land/std@0.114.0/fs/empty_dir.ts'
+
+export { resolvePath, emptyDirSync, joinPath }
 
 export { cac } from 'https://unpkg.com/cac@6.7.12/mod.ts'
+
+export const moveSync = (from: string, to: string) => {
+  _moveSync(from, to, { overwrite: true })
+}
 
 export const fetchJSON = async (url: string) => {
   const res = await fetch(url, {
@@ -27,11 +34,11 @@ export const downloadFile = async (url: string, outFilePath: string) => {
   await res.body?.pipeTo(writableStream)
 }
 
-export { ensureDir } from 'https://deno.land/std@0.114.0/fs/ensure_dir.ts'
+export { ensureDirSync } from 'https://deno.land/std@0.114.0/fs/ensure_dir.ts'
 
 export { existsSync } from 'https://deno.land/std@0.114.0/fs/exists.ts'
 
-export const isEmptyDir = (dir: string) => {
+export const isEmptyDirSync = (dir: string) => {
   for (const _ of Deno.readDirSync(dir)) {
     return false
   }
@@ -53,8 +60,6 @@ export const runCommand = async (cmd: string[]) => {
     throw new Error(`Command failed with status ${status.code}: ${output}`)
   }
 }
-
-export { resolvePath }
 
 export const args = ['deno', 'cli', ...Deno.args]
 
