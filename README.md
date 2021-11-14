@@ -22,7 +22,8 @@ pnpm dlx aho user/repo [destination]
 With Deno:
 
 ```bash
-deno install --allow-net --allow-read --allow-write https://denopkg.com/egoist/aho@latest/aho.ts
+deno install --allow-net --allow-read --allow-write --allow-run \
+    https://denopkg.com/egoist/aho@latest/aho.ts
 
 aho user/repo [destination]
 ```
