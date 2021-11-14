@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "Node project",
+      "path": "."
+    },
+    {
+      "name": "Deno project",
+      "path": "./src/deno"
+    }
+  ],
+  "settings": {
+    "deno.suggest.imports.hosts": {
+      "https://deno.land": true
+    }
+  }
+}
