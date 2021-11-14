@@ -6,6 +6,8 @@
 
 [![npm version](https://badgen.net/npm/v/aho)](https://npm.im/aho)
 
+> ultra simple project scaffolding
+
 ## Usage
 
 With Node.js:

@@ -1,7 +1,7 @@
 {
   "name": "aho",
   "version": "0.0.0",
-  "description": "My awesome typescript library",
+  "description": "ultra simple project scaffolding",
   "publishConfig": {
     "access": "public"
   },
