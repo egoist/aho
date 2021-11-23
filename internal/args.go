@@ -69,7 +69,9 @@ func ParseArgs(args []string, help string, version string) (*AppArgs, error) {
 	}
 
 	if repo == "" {
-		return nil, fmt.Errorf("missing repo")
+		fmt.Printf(help, version)
+		fmt.Println("\nmissing repo")
+		os.Exit(1)
 	}
 
 	appArgs.repo = repo
