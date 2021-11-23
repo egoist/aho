@@ -7,7 +7,10 @@ import (
 )
 
 func Upgrade() {
-	bin := os.Args[0]
+	bin, err := os.Executable()
+	if err != nil {
+		panic(err)
+	}
 	dir := path.Dir(bin)
 
 	// Run command
