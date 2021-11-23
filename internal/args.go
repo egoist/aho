@@ -1,4 +1,4 @@
-package main
+package internal
 
 import (
 	_ "embed"
@@ -15,14 +15,14 @@ type AppArgs struct {
 	subpath     string
 }
 
-func parseArgs(args []string) (*AppArgs, error) {
+func ParseArgs(args []string, help string, version string) (*AppArgs, error) {
 	appArgs := new(AppArgs)
 	repo := ""
 	force := false
 	subpath := ""
 	destination := ""
-	help := false
-	version := false
+	showHelp := false
+	showVersion := false
 
 	for index := 0; index < len(args); index++ {
 		arg := args[index]
@@ -30,9 +30,9 @@ func parseArgs(args []string) (*AppArgs, error) {
 			if arg == "-f" || arg == "--force" {
 				force = true
 			} else if arg == "-h" || arg == "--help" {
-				help = true
+				showHelp = true
 			} else if arg == "-v" || arg == "--version" {
-				version = true
+				showVersion = true
 			} else if arg == "-p" || arg == "--path" {
 				v := ""
 				if index+1 <= len(args)-1 {
@@ -58,13 +58,13 @@ func parseArgs(args []string) (*AppArgs, error) {
 
 	}
 
-	if version {
-		PrintVersion()
+	if showVersion {
+		fmt.Println(version)
 		os.Exit(0)
 	}
 
-	if help {
-		PrintHelp()
+	if showHelp {
+		fmt.Printf(help, version)
 		os.Exit(0)
 	}
 
@@ -92,18 +92,4 @@ func GetCurrentDirectory() string {
 		panic(err)
 	}
 	return dir
-}
-
-//go:embed version.txt
-var version string
-
-//go:embed help.txt
-var help string
-
-func PrintHelp() {
-	fmt.Printf(help, version)
-}
-
-func PrintVersion() {
-	fmt.Println(version)
 }
