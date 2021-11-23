@@ -47,7 +47,10 @@ func ParseArgs(args []string, help string, version string) (*AppArgs, error) {
 				return nil, fmt.Errorf("unknown flag: %s", arg)
 			}
 		} else {
-			if repo == "" {
+			if arg == "upgrade" {
+				Upgrade()
+				os.Exit(0)
+			} else if repo == "" {
 				repo = arg
 			} else if destination == "" {
 				destination = arg

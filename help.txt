@@ -1,11 +1,14 @@
 aho v%s
 
-Usage:
-  aho [options] <repo> [destination="."]
+Commands:
+  <repo> [destination]   Download a repository and generate to destination directory
+  upgrade                Upgrade aho itself to the latest version
 
 Options:
   -f, --force
   -p, --path <path>    Use a sub directory instead of the whole directory
+  -h, --help           Show this help
+  -v, --version        Show version
 
 Examples:
   aho egoist/ts-lib-starter out-folder
