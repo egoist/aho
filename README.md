@@ -9,8 +9,10 @@
 ## Install
 
 ```bash
-curl -sf https://gobinaries.com/egoist/aho | sh
+curl -fsSL https://install.egoist.sh/aho.sh | bash -s -- -b /usr/local/bin
 ```
+
+Or [download a release](https://github.com/egoist/aho/releases) manually.
 
 ## Usage
 
