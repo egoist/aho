@@ -4,27 +4,17 @@
 
 # aho
 
-[![npm version](https://badgen.net/npm/v/aho)](https://npm.im/aho) [![npm downloads](https://badgen.net/npm/dm/aho)](https://npm/im/aho) [![install size](https://packagephobia.com/badge?p=aho)](https://packagephobia.com/result?p=aho)
-
 > ultra simple project scaffolding
+
+## Install
+
+```bash
+curl -sf https://gobinaries.com/egoist/aho | sh
+```
 
 ## Usage
 
-With Node.js:
-
 ```bash
-# NPM
-npx aho user/repo [destination]
-# PNPM
-pnpm dlx aho user/repo [destination]
-```
-
-With Deno:
-
-```bash
-deno install --allow-net --allow-read --allow-write --allow-run \
-    https://denopkg.com/egoist/aho@latest/aho.ts
-
 aho user/repo [destination]
 ```
 

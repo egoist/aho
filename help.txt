@@ -1,0 +1,12 @@
+aho v%s
+
+Usage:
+  aho [options] <repo> [destination="."]
+
+Options:
+  -f, --force
+  -p, --path <path>    Use a sub directory instead of the whole directory
+
+Examples:
+  aho egoist/ts-lib-starter out-folder
+  aho user/path -p sub_directory
