@@ -28,14 +28,6 @@ func FetchRepo(args *AppArgs) error {
 	// parse the repo to two parts
 	repo, version := ParseRepo(args.repo)
 
-	if version == "" {
-		defaultBranch, err := getDefaultBranchFromGitHubApi(repo)
-		if err != nil {
-			return err
-		}
-		version = *defaultBranch
-	}
-
 	if !args.force {
 		exists, err := pathExists(args.destination)
 		if err != nil {
@@ -47,6 +39,14 @@ func FetchRepo(args *AppArgs) error {
 			}
 		}
 
+	}
+
+	if version == "" {
+		defaultBranch, err := getDefaultBranchFromGitHubApi(repo)
+		if err != nil {
+			return err
+		}
+		version = *defaultBranch
 	}
 
 	// Get GitHub repo archive URL from repo and branch
