@@ -24,9 +24,9 @@ archives:
       386: i386
       amd64: x86_64
 brews:
-  tap:
-    owner: repo-owner
-    name: homebrew-tap
+  - tap:
+      owner: egoist
+      name: homebrew-tap
 checksum:
   name_template: "checksums.txt"
 snapshot:
