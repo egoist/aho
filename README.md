@@ -8,8 +8,16 @@
 
 ## Install
 
+Universal way to install
+
 ```bash
 curl -fsSL https://install.egoist.sh/aho.sh | bash -s -- -b /usr/local/bin
+```
+
+Or if you are a Mac user:
+
+```bash
+brew install egoist/tap/aho
 ```
 
 Or [download a release](https://github.com/egoist/aho/releases) manually.
