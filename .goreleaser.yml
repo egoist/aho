@@ -27,7 +27,6 @@ brews:
   - tap:
       owner: egoist
       name: homebrew-tap
-      token: "{{ .Env.GORELEASE_GITHUB_TOKEN }}"
     folder: Formula
 checksum:
   name_template: "checksums.txt"
