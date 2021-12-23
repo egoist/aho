@@ -6,16 +6,14 @@
     "access": "public"
   },
   "type": "module",
-  "bin": "./cli-node.js",
+  "bin": "./dist/cli.js",
   "files": [
-    "dist",
-    "/cli-node.js"
+    "dist"
   ],
   "scripts": {
-    "build": "rm -rf dist && tsup src/index.ts --format esm && npm run build-deno",
+    "build": "rm -rf dist && tsup src/cli.ts --format esm --target node14 --minify",
     "test": "echo lol",
-    "prepublishOnly": "npm run build",
-    "build-deno": "tsno scripts/build-deno.ts"
+    "prepublishOnly": "npm run build"
   },
   "license": "MIT",
   "devDependencies": {

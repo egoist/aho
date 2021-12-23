@@ -3,10 +3,7 @@ import { tmpdir } from 'os'
 import { resolve, join } from 'path'
 import https from 'https'
 import fs from 'fs'
-import { version } from '../../package.json'
-import { USER_AGENT } from '../shared'
-
-export { cac } from 'cac'
+import { version } from '../package.json'
 
 export const fetchJSON = (url: string): Promise<any> =>
   new Promise((resolve, reject) => {
@@ -101,3 +98,5 @@ export const emptyDirSync = (path: string) => {
   fs.rmSync(path, { recursive: true, force: true })
   ensureDirSync(path)
 }
+
+export const USER_AGENT = `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36`
