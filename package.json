@@ -25,6 +25,6 @@
     "prettier": "2.4.1",
     "tsno": "^1.5.0",
     "tsup": "5.11.9",
-    "typescript": "4.4.4"
+    "typescript": "4.5.4"
   }
 }
