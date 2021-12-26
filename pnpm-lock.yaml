@@ -9,7 +9,7 @@ specifiers:
   prettier: 2.4.1
   tsno: ^1.5.0
   tsup: 5.11.9
-  typescript: 4.4.4
+  typescript: 4.5.4
 
 devDependencies:
   '@egoist/prettier-config': 0.1.0
@@ -19,8 +19,8 @@ devDependencies:
   node-fetch: 3.1.0
   prettier: 2.4.1
   tsno: 1.5.0
-  tsup: 5.11.9_typescript@4.4.4
-  typescript: 4.4.4
+  tsup: 5.11.9_typescript@4.5.4
+  typescript: 4.5.4
 
 packages:
 
@@ -1048,7 +1048,7 @@ packages:
       esbuild: 0.13.9
     dev: true
 
-  /tsup/5.11.9_typescript@4.4.4:
+  /tsup/5.11.9_typescript@4.5.4:
     resolution: {integrity: sha512-APFcd9qKblMVO35O5OyIcfa4lwBrVNinwtifUojO78I6j0aDhS4fQ06gq6vF1b/+Z83pYDWNb0R2fmO9PX3IVQ==}
     hasBin: true
     peerDependencies:
@@ -1071,13 +1071,13 @@ packages:
       source-map: 0.7.3
       sucrase: 3.20.3
       tree-kill: 1.2.2
-      typescript: 4.4.4
+      typescript: 4.5.4
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /typescript/4.4.4:
-    resolution: {integrity: sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA==}
+  /typescript/4.5.4:
+    resolution: {integrity: sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
