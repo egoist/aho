@@ -35,7 +35,8 @@ export async function extract(
 
 export function parseRepo(input: string) {
   const [_repo, tag] = input.split('#')
-  const [, owner, repoName, subpath = ''] = /^(\w+)\/(\w+)(\/.+)?$/.exec(_repo)!
+  const [, owner, repoName, subpath = ''] =
+    /^([\w\-\.]+)\/([\w\-\.]+)(\/.+)?$/.exec(_repo)!
   return { owner, repoName, subpath: subpath.slice(1), tag }
 }
 
