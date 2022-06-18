@@ -18,12 +18,12 @@
   "license": "MIT",
   "devDependencies": {
     "@egoist/prettier-config": "1.0.0",
-    "@types/node": "^16.11.7",
-    "cac": "^6.7.12",
-    "fast-glob": "^3.2.7",
-    "node-fetch": "^3.1.0",
+    "@types/node": "16.11.41",
+    "cac": "6.7.12",
+    "fast-glob": "3.2.11",
+    "node-fetch": "3.2.6",
     "prettier": "2.5.1",
-    "tsno": "^1.5.0",
+    "tsno": "1.6.0",
     "tsup": "5.11.9",
     "typescript": "4.5.4"
   }
