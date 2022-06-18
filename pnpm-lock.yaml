@@ -6,7 +6,7 @@ specifiers:
   cac: ^6.7.12
   fast-glob: ^3.2.7
   node-fetch: ^3.1.0
-  prettier: 2.5.1
+  prettier: 2.7.1
   tsno: ^1.5.0
   tsup: 5.11.9
   typescript: 4.5.4
@@ -17,7 +17,7 @@ devDependencies:
   cac: 6.7.12
   fast-glob: 3.2.7
   node-fetch: 3.1.0
-  prettier: 2.5.1
+  prettier: 2.7.1
   tsno: 1.5.0
   tsup: 5.11.9_typescript@4.5.4
   typescript: 4.5.4
@@ -913,8 +913,8 @@ packages:
       import-cwd: 3.0.0
     dev: true
 
-  /prettier/2.5.1:
-    resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
